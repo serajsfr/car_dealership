@@ -13,3 +13,6 @@ class Listing(models.Model):
     milage = models.IntegerField()
     price = models.IntegerField()
     # image
+    
+    def __str__(self):
+        return self.name
