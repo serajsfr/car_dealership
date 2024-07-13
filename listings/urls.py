@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import listings, listing, create, update
+from .views import listings, listing, create, update, delete
 
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('listing/<id>/', listing, name='listing'),
     path('create/', create, name='create'),
     path('update/<id>/', update, name='update'),
+    path('delete/<id>/', delete, name='delete'),
 ]
