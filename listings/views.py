@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Listing
+from .forms import ListingForm
 
 
 def listings(request):
@@ -15,3 +16,10 @@ def listing(request, id):
         'listing': listing
     }
     return render(request, 'listing.html', context)
+
+def create(request):
+    form = ListingForm
+    context = {
+        'form': form
+    }
+    return render(request, 'create.html', context)
