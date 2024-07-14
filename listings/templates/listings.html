@@ -1,8 +1,24 @@
-<p>Here is our listings</p>
+{% extends "base.html" %}
+{% load static %}
 
-{% for listing in listings %}
+{% block navitem %}
+
+<li><a href="/" style="--i:1;">Home</a></li>
+<li><a href="/cars/" style="--i:3;" class="active">Cars</a></li>
+<li><a href="" style="--i:2;">About</a></li>
+<li><a href="" style="--i:4;">Featured</a></li>
+<li><a href="" style="--i:5;">Contact</a></li>
+
+{% endblock navitem %}
+
+{% block content %}
+
+<h1>Here is our Cars</h1>
+{% for car in cars %}
 <ul>
-<li><a href='listing/{{ listing.id }}'>{{ listing }}</a></li>
+    <li><a href='car/{{ car.id }}'>{{ car }}</a></li>
 </ul>
 {% endfor %}
-<a href='/create'>Add new listing</a>
+<a href="create/" class="btn">Add new listing</a>
+
+{% endblock content %}

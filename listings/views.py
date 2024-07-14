@@ -3,17 +3,20 @@ from .models import Listing
 from .forms import ListingForm
 
 
-def listings(request):
-    listings = Listing.objects.all()
-    context = {
-        'listings': listings
-    }
-    return render(request, 'index.html', context)
+def home(request):
+    return render(request, 'index.html')
 
-def listing(request, id):
-    listing = Listing.objects.get(id=id)
+def cars(request):
+    cars = Listing.objects.all()
     context = {
-        'listing': listing
+        'cars': cars
+    }
+    return render(request, 'listings.html', context)
+
+def car(request, id):
+    car = Listing.objects.get(id=id)
+    context = {
+        'car': car
     }
     return render(request, 'listing.html', context)
 
@@ -23,26 +26,26 @@ def create(request):
         form = ListingForm(request.POST, request.FILES)
         if form.is_valid:
             form.save()
-        return redirect('/')
+        return redirect('/cars')
     context = {
         'form': form
     }
     return render(request, 'create.html', context)
 
 def update(request, id):
-    listing = Listing.objects.get(id=id)
-    form = ListingForm(instance=listing)
+    car = Listing.objects.get(id=id)
+    form = ListingForm(instance=car)
     if request.method == 'POST':
-        form = ListingForm(request.POST, instance=listing, files=request.FILES)
+        form = ListingForm(request.POST, instance=car, files=request.FILES)
         if form.is_valid:
             form.save()
-        return redirect('/')
+        return redirect('/cars')
     context = {
         'form': form
     }
     return render(request, 'update.html', context)
 
 def delete(request, id):
-    listing = Listing.objects.get(id=id)
-    listing.delete()
-    return redirect('/')
+    car = Listing.objects.get(id=id)
+    car.delete()
+    return redirect('/cars')
