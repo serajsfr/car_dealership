@@ -8,7 +8,7 @@ def listings(request):
     context = {
         'listings': listings
     }
-    return render(request, 'listings.html', context)
+    return render(request, 'index.html', context)
 
 def listing(request, id):
     listing = Listing.objects.get(id=id)
