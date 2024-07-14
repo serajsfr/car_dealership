@@ -142,6 +142,24 @@ header{
     opacity: 0;
     animation-delay: .6s;
 }
+.header-left li a{
+    margin: 15px 0 30px;
+    line-height: 150%;
+    color: var(--color-dark);
+    font-size: 16px;
+    animation: logoAni forwards 1s ease;
+    opacity: 0;
+    animation-delay: .6s;
+}
+.header-left li a:hover{
+    color: var(--color-primary);
+}
+.header-left img{
+    position: relative;
+    opacity: 0;
+    animation: H1Ani forwards 1s ease;
+    animation-delay: 1.6s;
+}
 .header-container{
     display: grid;
     grid-template-columns: auto auto;

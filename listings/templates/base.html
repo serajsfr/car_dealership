@@ -23,15 +23,12 @@
         <!-- ....................Start Navbar...................... -->
         <nav>
             <div class="container nav-container">
-              <a href="" class="logo"><h3>Car Dealership Website</h3></a>
+              <a href="/" class="logo"><h3>Car Dealership Website</h3></a>
               <ul class="nav-link">
-                {% block navitem %}{% endblock navitem %}
+                {% block nav_item %}{% endblock nav_item %}
               </ul>
               <ul class="social-link">
-                <li><a href="home" style="--i:1;"><i class="fa-brands fa-facebook"></i></a></li> 
-                <li><a href="" style="--i:2;"><i class="fa-brands fa-twitter"></i></a></li> 
-                <li><a href="" style="--i:3;"><i class="fa-brands fa-instagram"></i></a></li> 
-                <li><a href="" style="--i:4;"><i class="fa-brands fa-linkedin"></i></a></li>
+                {% block social_media %}{% endblock social_media %}
               </ul>
             </div>
           </nav>
@@ -41,7 +38,7 @@
         <header>
             <div class="container header-container">
             <div class="header-left">
-                {% block content %}{% endblock %}
+                {% block content %}{% endblock content %}
             </div>
             <div class="header-right">
                 <div class="sq-box">

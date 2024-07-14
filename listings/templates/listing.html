@@ -1,12 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block nav_item %}
+
+<li><a href="/" style="--i:1;">Home</a></li>
+<li><a href="/cars/" style="--i:3;" class="active">Cars</a></li>
+<li><a href="" style="--i:2;">About</a></li>
+<li><a href="" style="--i:4;">Featured</a></li>
+<li><a href="" style="--i:5;">Contact</a></li>
+
+{% endblock nav_item %}
+
 {% block content %}
 
 <p>Here is our single list</p>
 <p>Name: {{ car.name }} -- Price: {{ car.price }}</p>
 <img src='{{ car.image.url }}' width='300', height='300'></img></br>
-<a href='/cars/update/{{ car.id }}'>Update</a></br>
-<a href='/cars/delete/{{ car.id }}'>Delete</a>
+<a href='/cars/update/{{ car.id }}' class="btn">Update</a></br>
+<a href='/cars/delete/{{ car.id }}' class="btn">Delete</a>
 
 {% endblock content %}
