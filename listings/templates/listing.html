@@ -13,8 +13,12 @@
 
 {% block content %}
 
-<p>Here is our single list</p>
-<p>Name: {{ car.name }} -- Price: {{ car.price }}</p>
+<h1>{{ car.name }}</h1>
+{% comment %} <p>Brand: {{ car.brand }}</p>
+<p>Description: {{ car.description }}</p>
+<p>Price: {{ car.price }}</p>
+<p>Milage: {{ car.milage }}</p> {% endcomment %}
+<p>{{ car.description }}</p>
 <img src='{{ car.image.url }}' width='300', height='300'></img></br>
 <a href='/cars/update/{{ car.id }}' class="btn">Update</a></br>
 <a href='/cars/delete/{{ car.id }}' class="btn">Delete</a>
